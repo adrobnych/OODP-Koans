@@ -40,7 +40,7 @@ public class Koan extends TDLKoan{
 	public void talk_to_master(){
 		Duck rd = new RibbonDuck();
 		rd.performQuack();
-		assertEquals("Squeak", COUT.getLastLine());
+		assertEquals(___, COUT.getLastLine());
 		rd.performFly();
 		assertEquals(___, COUT.getLastLine());
 		

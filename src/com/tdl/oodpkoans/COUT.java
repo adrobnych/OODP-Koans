@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List; 
 
 public class COUT {
-	private static final int HISTORYDEPTH = 3;
+	private static final int HISTORYDEPTH = 25;
 	
 	private static class History{
 		private static List<String> stack = new ArrayList();
@@ -36,7 +36,6 @@ public class COUT {
 	//private static String last_line;
 	
 	public static void println(String s){
-		//last_line = new String(s);
 		History.addLine(new String(s));
 		System.out.println(s);
 	}
