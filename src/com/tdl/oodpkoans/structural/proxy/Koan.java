@@ -22,7 +22,7 @@ import com.tdl.oodpkoans.TDLKoan;
 
 public class Koan extends TDLKoan{	
 	
-	Hashtable datingDB = new Hashtable();
+	Hashtable<String, PersonBean> datingDB = new Hashtable<>();
  	
 	@Test
 	public void talk_to_master(){
