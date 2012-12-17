@@ -1,0 +1,1 @@
+We have a coffee shop. They prepare big deal of beverages using limited number of components. Each such a component has cost() method. We have to had ability to create any combination of beverages holding Espresso, DarkRoast, Decaf or HouseBlend as a core for any beverage. 
