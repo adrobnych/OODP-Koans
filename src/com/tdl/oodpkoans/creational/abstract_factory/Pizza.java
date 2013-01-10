@@ -3,16 +3,16 @@ package com.tdl.oodpkoans.creational.abstract_factory;
 import com.tdl.oodpkoans.COUT;
 
 public abstract class Pizza {
-	String name;
+	protected String name;
 
-	Dough dough;
-	Sauce sauce;
-	Veggies veggies[];
-	Cheese cheese;
-	Pepperoni pepperoni;
-	Clams clam;
+	protected Dough dough;
+	protected Sauce sauce;
+	protected Veggies veggies[];
+	protected Cheese cheese;
+	protected Pepperoni pepperoni;
+	protected Clams clam;
 
-	abstract void prepare();
+	public abstract void prepare();
 
 	void bake() {
 		COUT.println("Bake for 25 minutes at 350");
