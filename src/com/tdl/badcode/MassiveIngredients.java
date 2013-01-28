@@ -1,18 +1,12 @@
 package com.tdl.badcode;
 
-import com.tdl.oodpkoans.creational.abstract_factory.Cheese;
-import com.tdl.oodpkoans.creational.abstract_factory.Clams;
-import com.tdl.oodpkoans.creational.abstract_factory.Dough;
-import com.tdl.oodpkoans.creational.abstract_factory.FreshClams;
 import com.tdl.oodpkoans.creational.abstract_factory.Garlic;
 import com.tdl.oodpkoans.creational.abstract_factory.MarinaraSauce;
 import com.tdl.oodpkoans.creational.abstract_factory.Mushroom;
 import com.tdl.oodpkoans.creational.abstract_factory.Onion;
-import com.tdl.oodpkoans.creational.abstract_factory.Pepperoni;
 import com.tdl.oodpkoans.creational.abstract_factory.Pizza;
 import com.tdl.oodpkoans.creational.abstract_factory.RedPepper;
 import com.tdl.oodpkoans.creational.abstract_factory.ReggianoCheese;
-import com.tdl.oodpkoans.creational.abstract_factory.Sauce;
 import com.tdl.oodpkoans.creational.abstract_factory.SlicedPepperoni;
 import com.tdl.oodpkoans.creational.abstract_factory.ThinCrustDough;
 import com.tdl.oodpkoans.creational.abstract_factory.Veggies;
@@ -28,75 +22,25 @@ class PepperoniPizza extends Pizza {
 	public void prepare() {
 		if(city.equals("New York")){
 			System.out.println("Preparing " + name);
-			dough = (new NYDoughIngredientFactory()).createDough();
-			sauce = (new NYSauceIngredientFactory()).createSauce();
-			cheese = (new NYCheeseIngredientFactory()).createCheese();
-			veggies = (new NYVeggiesIngredientFactory()).createVeggies();
-			pepperoni = (new NYPepperoniIngredientFactory()).createPepperoni();
+			dough = new ThinCrustDough();
+			sauce = new MarinaraSauce();
+			cheese = new ReggianoCheese();
+			veggies = new Veggies[]{ new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
+			pepperoni = new SlicedPepperoni();
 		}
 		if(city.equals("Chicago")){
 			System.out.println("Preparing " + name);
-		//	dough = (new ChicagoDoughIngredientFactory()).createDough();
-		//	sauce = (new ChicagoSauceIngredientFactory()).createSauce();
-		//	cheese = (new ChicagoCheeseIngredientFactory()).createCheese();
-		//	veggies = (new ChicagoVeggiesIngredientFactory()).createVeggies();
-		//	pepperoni = (new ChicagoPepperoniIngredientFactory()).createPepperoni();
+//			dough = new ChicagoDough();
+//			sauce = new SuperSauce();
+//			cheese = new BlueCheese();
+//			veggies = new Veggies[]{ new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
+//			pepperoni = new OtherPepperoni();
 		}
-		if(city.equals("Indianapolis")){
-			System.out.println("Preparing " + name);
-		//	dough = (new IndianapolisDoughIngredientFactory()).createDough();
-		//	sauce = (new IndianapolisSauceIngredientFactory()).createSauce();
-		//	cheese = (new IndianapolisCheeseIngredientFactory()).createCheese();
-		//	veggies = (new IndianapolisVeggiesIngredientFactory()).createVeggies();
-		//	pepperoni = (new IndianapolisPepperoniIngredientFactory()).createPepperoni();
-		}
+		
 		//...
 	}
 }
 
-
-class NYDoughIngredientFactory {
-
-	public Dough createDough() {
-		return new ThinCrustDough();
-	}
-}
-
-class NYSauceIngredientFactory {
-
-	public Sauce createSauce() {
-		return new MarinaraSauce();
-	}
-}
-
-class NYCheeseIngredientFactory {
-
-	public Cheese createCheese() {
-		return new ReggianoCheese();
-	}
-}
-
-class NYVeggiesIngredientFactory {
-
-	public Veggies[] createVeggies() {
-		Veggies veggies[] = { new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
-		return veggies;
-	}
-}
-
-class NYPepperoniIngredientFactory  {
-
-	public Pepperoni createPepperoni() {
-		return new SlicedPepperoni();
-	}
-}
-
-class NYClamsIngredientFactory  {    // franchise city plus ingredient variation cause combinatoric explosion
-
-	public Clams createClam() {
-		return new FreshClams();
-	}
-}
 
 
 
