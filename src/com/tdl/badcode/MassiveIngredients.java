@@ -27,13 +27,30 @@ class PepperoniPizza extends Pizza {
  
 	public void prepare() {
 		if(city.equals("New York")){
-		System.out.println("Preparing " + name);
-		dough = (new NYDoughIngredientFactory()).createDough();
-		sauce = (new NYSauceIngredientFactory()).createSauce();
-		cheese = (new NYCheeseIngredientFactory()).createCheese();
-		veggies = (new NYVeggiesIngredientFactory()).createVeggies();
-		pepperoni = (new NYPepperoniIngredientFactory()).createPepperoni();
+			System.out.println("Preparing " + name);
+			dough = (new NYDoughIngredientFactory()).createDough();
+			sauce = (new NYSauceIngredientFactory()).createSauce();
+			cheese = (new NYCheeseIngredientFactory()).createCheese();
+			veggies = (new NYVeggiesIngredientFactory()).createVeggies();
+			pepperoni = (new NYPepperoniIngredientFactory()).createPepperoni();
 		}
+		if(city.equals("Chicago")){
+			System.out.println("Preparing " + name);
+		//	dough = (new ChicagoDoughIngredientFactory()).createDough();
+		//	sauce = (new ChicagoSauceIngredientFactory()).createSauce();
+		//	cheese = (new ChicagoCheeseIngredientFactory()).createCheese();
+		//	veggies = (new ChicagoVeggiesIngredientFactory()).createVeggies();
+		//	pepperoni = (new ChicagoPepperoniIngredientFactory()).createPepperoni();
+		}
+		if(city.equals("Indianapolis")){
+			System.out.println("Preparing " + name);
+		//	dough = (new IndianapolisDoughIngredientFactory()).createDough();
+		//	sauce = (new IndianapolisSauceIngredientFactory()).createSauce();
+		//	cheese = (new IndianapolisCheeseIngredientFactory()).createCheese();
+		//	veggies = (new IndianapolisVeggiesIngredientFactory()).createVeggies();
+		//	pepperoni = (new IndianapolisPepperoniIngredientFactory()).createPepperoni();
+		}
+		//...
 	}
 }
 
